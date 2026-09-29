@@ -1,3 +1,5 @@
+# Streamlit-powered UI for chat and results
+
 """
 Streamlit UI for the Simple AI Agent.
 Provides a chat interface that connects to the FastAPI backend.

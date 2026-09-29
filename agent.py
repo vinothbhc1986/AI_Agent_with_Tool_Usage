@@ -1,5 +1,7 @@
+# Core agent logic: tool use, LLM prompts, orchestration
+
 import random
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 import requests
 

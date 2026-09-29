@@ -1,3 +1,5 @@
+# FastAPI REST backend exposing agent functions
+
 """
 FastAPI server that provides REST endpoints for the AI agent.
 """
@@ -13,7 +15,9 @@ load_dotenv()
 # Import the agent
 from agent import SimpleAgent
 
-# Initialize FastAPI app
+# Initialize FastAPI app / server
+# Auto-Documentation: FastAPI generates interactive API docs
+
 app = FastAPI(
     title="Simple AI Agent API",
     description="A beginner-friendly AI agent that can fetch advice and search books",
@@ -28,6 +32,8 @@ except Exception as e:
     agent = None
 
 # Pydantic models
+# Input Validation: Pydantic models ensure data integrity
+
 class ChatRequest(BaseModel):
     message: str
 
@@ -61,6 +67,8 @@ def health():
         model=model_name,
         agent_ready=agent is not None
     )
+
+# Chat Endpoint
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
