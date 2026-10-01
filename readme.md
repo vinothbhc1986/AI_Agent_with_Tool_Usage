@@ -60,11 +60,19 @@ we have defined 2 different tools that our agent can use to answer user queries.
 command:****
 
 ***uvicorn api:app --reload***
+***or***
+****python api.py***
 
 ****Open another Terminal OR Command Prompt and Start the UI Server using the
 following command****
 
 ***streamlit run ui.py***
+
+***OR**
+
+***To rerun automatically when you save ui.py, start it with:***
+
+***streamlit run ui.py --server.runOnSave true****
 
 ****You can now view your Streamlit app in your browser.****
 

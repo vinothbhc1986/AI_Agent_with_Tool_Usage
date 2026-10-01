@@ -7,7 +7,6 @@ Provides a chat interface that connects to the FastAPI backend.
 import os
 import requests
 import streamlit as st
-import json
 from typing import Dict, Any
 from dotenv import load_dotenv
 
