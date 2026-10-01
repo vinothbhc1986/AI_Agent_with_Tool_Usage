@@ -19,7 +19,7 @@ from agent import SimpleAgent
 # Auto-Documentation: FastAPI generates interactive API docs
 
 app = FastAPI(
-    title="Simple AI Agent API..",
+    title="Simple AI Agent API.",
     description="A beginner-friendly AI agent that can fetch advice and search books...",
     version="1.0.0"
 )

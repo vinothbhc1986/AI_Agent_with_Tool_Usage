@@ -42,7 +42,7 @@ search, then summarizes results for the user.***
 
 **How is it built?**
 
-***Modestly, with FastAPI (backend), Streamlit (UI), and the Groq LLM.***
+***Modestly, with FastAPI (backend), Streamlit (UI)***
 
 **Tools (External Capabilities)**
 
