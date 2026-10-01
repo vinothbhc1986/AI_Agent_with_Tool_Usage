@@ -116,7 +116,11 @@ def main():
                         st.write("No tools were used for this response.")
 
     # Chat input
-    if prompt := st.chat_input("Ask me anything! I can give advice or search for books."):
+    prompt = st.chat_input("Ask me anything! I can give advice or search for books.")
+    if prompt is None:
+        prompt = st.session_state.pop("example_prompt", None)
+
+    if prompt:
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
@@ -172,8 +176,7 @@ def main():
 
     for query in example_queries:
         if st.sidebar.button(query, key=f"example_{query}"):
-            # Add to chat input
-            st.session_state.messages.append({"role": "user", "content": query})
+            st.session_state["example_prompt"] = query
             st.rerun()
 
 if __name__ == "__main__":

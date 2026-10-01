@@ -61,7 +61,7 @@ def root():
 @app.get("/health", response_model=HealthResponse)
 def health():
     """Health check endpoint."""
-    model_name = os.environ.get("LLAMA_MODEL", "llama3.2:3b")
+    model_name = os.environ.get("LLM_MODEL", "llama3.2:3b")
     return HealthResponse(
         status="ok",
         model=model_name,
@@ -78,7 +78,7 @@ def chat(req: ChatRequest):
     if not agent:
         raise HTTPException(
             status_code=500,
-            detail="Agent not initialized. Please check your GROQ_API_KEY."
+            detail="Agent not initialized."
         )
 
     try:
